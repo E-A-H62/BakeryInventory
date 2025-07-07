@@ -1,0 +1,72 @@
+/* Inventory.css
+ * Styles for the public inventory display
+ */
+
+/* Main container for the inventory page */
+.inventory-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Message shown when inventory is empty */
+.empty-message {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    padding: 2rem;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Grid layout for inventory items */
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Individual inventory item card */
+.inventory-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Item name in the card */
+.inventory-item h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+/* Category label in the card */
+.inventory-item .category {
+    color: #666;
+    font-style: italic;
+}
+
+/* Price display in the card */
+.inventory-item .price {
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Quantity display in the card */
+.inventory-item .quantity {
+    color: #666;
+}
+
+/* Inventory page heading */
+.inventory-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Hover effect for inventory items */
+.inventory-item:hover {
+    transform: translateY(-5px);
+} 
