@@ -25,6 +25,10 @@ const Inventory: React.FC = () => {
 
     return (
         <div className="inventory-container">
+            <nav className="nav-menu">
+                <a href="/">Home Page</a>
+                <a href="/inventory">Bakery Inventory</a>
+            </nav>
             <h1>Bakery Inventory</h1>
             {inventory.length === 0 ? (
                 // Show message when inventory is empty

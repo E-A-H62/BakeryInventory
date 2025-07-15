@@ -9,27 +9,6 @@
   background-color: #f8f9fa;
 }
 
-/* Navigation menu styling */
-.nav-menu {
-  background-color: #333;
-  padding: 1rem 2rem;
-  display: flex;
-  gap: 2rem;
-}
-
-/* Navigation links */
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-/* Navigation link hover effect */
-.nav-menu a:hover {
-  color: #4CAF50;
-}
-
 /* Home page container */
 .home-container {
   max-width: 800px;

@@ -11,7 +11,7 @@
 
 /* Button for creating new items */
 .create-button {
-    background-color: #4CAF50;
+    background-color: #16a085;
     color: white;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -22,14 +22,10 @@
     font-weight: 500;
 }
 
-.create-button:hover {
-    background-color: #45a049;
-}
-
 /* Message shown when inventory is empty */
 .empty-message {
     text-align: center;
-    color: #666;
+    color: #1f3a3d;
     font-size: 1.1rem;
     padding: 2rem;
     background: #f5f5f5;
@@ -73,13 +69,13 @@
 
 /* Primary action button (first in group) */
 .button-group button:first-child {
-    background-color: #4CAF50;
+    background-color: #1f3a3d;
     color: white;
 }
 
 /* Secondary action button (last in group) */
 .button-group button:last-child {
-    background-color: #f44336;
+    background-color: #e46960;
     color: white;
 }
 
@@ -101,18 +97,18 @@
 /* Item name in the card */
 .inventory-item h3 {
     margin: 0 0 1rem 0;
-    color: #333;
+    color: #1f3a3d;
 }
 
 /* Item details in the card */
 .inventory-item p {
     margin: 0.5rem 0;
-    color: #666;
+    color: #1f3a3d;
 }
 
 /* Edit button in item card */
 .inventory-item .button-group button {
-    background-color: #2196F3;
+    background-color: #42abce;
     color: white;
     margin-right: 0.5rem;
 }
