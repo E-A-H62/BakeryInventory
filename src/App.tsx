@@ -19,7 +19,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Inventory from './components/Inventory';
 import Admin from './components/Admin';
 import { InventoryProvider } from './context/InventoryContext';
-import LandingPage from './components/LandingPage';
 import './App.css';
 
 /**
