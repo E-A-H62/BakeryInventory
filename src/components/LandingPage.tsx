@@ -2,7 +2,16 @@ import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './LandingPage.css';
 
+
 const LandingPage: React.FC = () => {
+    const bakerySchedule = [
+        { day: 'Monday', hours: 'TBD' },
+        { day: 'Tuesday', hours: 'TBD' },
+        { day: 'Wednesday', hours: 'TBD' },
+        { day: 'Thursday', hours: 'TBD' },
+        { day: 'Friday', hours: 'TBD' },
+        { day: 'Saturday & Sunday', hours: 'TBD' }];  
+
     return (
         <div id="page-wrapper">
             <nav className="nav-menu">
@@ -14,72 +23,47 @@ const LandingPage: React.FC = () => {
                 <div className="container">
                     <div className="inner">
                         <header>
-                            <h2>Welcome to Our Bakery</h2>
+                            <h1>Freshly Baked Every Day</h1>
                         </header>
-                        <p>Discover our delicious treats and fresh baked goods.</p>
+                        <p>Enjoy our handcrafted pastries.</p>
                         <footer>
-                            <ul className="buttons">
-                                <li><a href="#main" className="button fit scrolly">Tell Me More</a></li>
-                            </ul>
+                            <a href="#main" className="primary-button">Learn More</a>
                         </footer>
                     </div>
                 </div>
             </section>
 
-            <article id="main">
-                <div className="wrapper container special-alt">
-                    <header>
-                        <h2>About Us</h2>
-                        <p>This is the about section of the website.</p>
-                    </header>
+            <main id="main">
+                <section className="about-section">
+                    <h2>About Us</h2>
+                    <p>Here's the about section.</p>
+                </section>
 
-                    <section className="wrapper container special-alt">
-                        <header>
-                            <h2>Main Section</h2>
-                        </header>
-                        <p>This is for another main section of the website.</p>
-                    </section>
+                <section className="schedule-section">
+                    <h2>Bakery Schedule</h2>
+                    <ul className="schedule-grid">
+                        {bakerySchedule.map(({day, hours}) => (
+                            <li key={day}>
+                                <strong>{day}</strong>: {hours}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
 
-                    <section className="container special">
-                        <header className="schedule">
-                            <h2>Schedule</h2>
-                            <p>This section will display the bakery's schedule for the week.</p>
-                        </header>
-
-                        <div className="schedule">
-                            <section>
-                                <header>
-                                    <h3>MONDAY</h3>
-                                </header>
-                                <p>Hours to be determined.</p>
-                                <header>
-                                    <h3>TUESDAY</h3>
-                                </header>
-                                <p>Hours to be determined.</p>
-                                <header>
-                                    <h3>WEDNESDAY</h3>
-                                </header>
-                                <p>Hours to be determined.</p>
-                                <header>
-                                    <h3>THURSDAY</h3>
-                                </header>
-                                <p>Hours to be determined.</p>
-                                <header>
-                                    <h3>FRIDAY</h3>
-                                </header>
-                                <p>Hours to be determined.</p>
-                            </section>
-                        </div>
-                    </section>
-                </div>
-            </article>
+                <section className="find-us">
+                    <div className="find-us-content">
+                        <h2>Where to Find Us?</h2>
+                        <p>Visit us at 1234 Example Ave, Pasadena, CA.</p>
+                        {/* Update image */}
+                        <img src="/images/bakery-front.jpg" alt="Our bakery storefront" />
+                    </div>
+                </section>
+            </main>
 
             <section id="cta">
                 <div className="container">
-                    <header>
-                        <h2>More Information</h2>
-                        <p>This section will contain more information about bakery (such as discord links).</p>
-                    </header>
+                    <h2>Stay Connected</h2>
+                    <p>Follow us on social or join our community for updates.</p>
                 </div>
             </section>
         </div>

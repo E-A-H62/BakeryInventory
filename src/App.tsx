@@ -12,10 +12,9 @@
  * - Admin route (protected)
  */
 
- /** possible resource: https://www.npmjs.com/package/react-animate-on-scroll */
 
  import React from 'react';
- import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
  import Inventory from './components/Inventory';
  import Admin from './components/Admin';
  import { InventoryProvider } from './context/InventoryContext';
