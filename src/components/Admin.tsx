@@ -40,7 +40,8 @@ const Admin: React.FC = () => {
         name: '',
         price: '',
         quantity: '',
-        category: ''
+        category: '',
+        imageUrl: ''
     });
 
     // Check for valid admin token on component mount
@@ -63,9 +64,30 @@ const Admin: React.FC = () => {
             name: item.getItemName(),
             price: item.getItemPrice().toString(),
             quantity: item.getItemQuantity().toString(),
-            category: item.getItemCategory()
+            category: item.getItemCategory(),
+            imageUrl: item.getItemImageUrl()
         });
     };
+
+    /**
+     * Handle image upload
+     * Reads the selected file and sets the image URL in form data
+     * @param e - Change event from file input
+     */
+    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFormData(prev => ({
+                    ...prev,
+                    imageUrl: reader.result as string // base64 string
+                }));
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+    
 
     /**
      * Handle creating a new item
@@ -78,7 +100,8 @@ const Admin: React.FC = () => {
             name: '',
             price: '',
             quantity: '',
-            category: ''
+            category: '',
+            imageUrl: ''
         });
     };
 
@@ -93,7 +116,8 @@ const Admin: React.FC = () => {
             formData.name,
             parseFloat(formData.price),
             parseInt(formData.quantity),
-            formData.category
+            formData.category,
+            formData.imageUrl
         );
 
         if (isCreating) {
@@ -105,7 +129,7 @@ const Admin: React.FC = () => {
         // Reset form state
         setEditingItem(null);
         setIsCreating(false);
-        setFormData({ name: '', price: '', quantity: '', category: '' });
+        setFormData({ name: '', price: '', quantity: '', category: '', imageUrl: '' });
     };
 
     /**
@@ -123,6 +147,11 @@ const Admin: React.FC = () => {
 
     return (
         <div className="admin-container">
+            <nav className="nav-menu">
+                <a href="/">Home Page</a>
+                <a href="/inventory">Bakery Inventory</a>
+            </nav>
+
             <h1>Admin Dashboard</h1>
             
             {(editingItem || isCreating) ? (
@@ -160,6 +189,19 @@ const Admin: React.FC = () => {
                         onChange={(e) => setFormData({...formData, category: e.target.value})}
                         required
                     />
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                    />
+                    {formData.imageUrl && ( // Show image preview if available
+                        <img
+                            src={formData.imageUrl}
+                            alt="Preview"
+                            className="image-preview"
+                            style={{ maxWidth: '150px', marginTop: '10px' }}
+                        />
+                    )}
                     <div className="button-group">
                         <button type="submit">{isCreating ? 'Create Item' : 'Save Changes'}</button>
                         <button type="button" onClick={() => {
@@ -179,6 +221,14 @@ const Admin: React.FC = () => {
                         ) : (
                             inventory.map((item, index) => (
                                 <div key={index} className="inventory-item">
+                                    {item.getItemImageUrl() && ( // Check if item has an image URL
+                                        <img // Display item image if available
+                                            src={item.getItemImageUrl()}
+                                            alt={item.getItemName()}
+                                            className="item-image"
+                                            style={{ maxWidth: '150px', marginBottom: '10px' }}
+                                        />
+                                    )}
                                     <h3>{item.getItemName()}</h3>
                                     <p>Category: {item.getItemCategory()}</p>
                                     <p>Price: ${item.getItemPrice().toFixed(2)}</p>

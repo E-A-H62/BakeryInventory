@@ -39,6 +39,14 @@ const Inventory: React.FC = () => {
                 <div className="inventory-grid">
                     {inventory.map((item, index) => (
                         <div key={index} className="inventory-item">
+                            {item.getItemImageUrl() && ( // Check if item has an image URL
+                                <img // Display item image if available
+                                    src={item.getItemImageUrl()}
+                                    alt={item.getItemName()}
+                                    className="item-image"
+                                    style={{ maxWidth: '150px', marginBottom: '10px' }}
+                                />
+                            )}
                             <h3>{item.getItemName()}</h3>
                             <p className="category">{item.getItemCategory()}</p>
                             <p className="price">${item.getItemPrice().toFixed(2)}</p>

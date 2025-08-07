@@ -35,7 +35,8 @@ const itemToStorage = (item: Item) => ({
     name: item.getItemName(),
     price: item.getItemPrice(),
     quantity: item.getItemQuantity(),
-    category: item.getItemCategory()
+    category: item.getItemCategory(),
+    imageUrl: item.getItemImageUrl()
 });
 
 /**
@@ -46,7 +47,8 @@ const storageToItem = (data: any) => new Item(
     data.name,
     data.price,
     data.quantity,
-    data.category
+    data.category,
+    data.imageUrl
 );
 
 // Key used to store inventory data in localStorage

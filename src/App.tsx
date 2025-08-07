@@ -30,6 +30,7 @@
      <InventoryProvider>
        <Router>
          <div className="App"> 
+         <title>Bakery Inventory</title>
            {/* Route definitions for different pages */}
            <Routes> 
              <Route path="/" element={<LandingPage />} />

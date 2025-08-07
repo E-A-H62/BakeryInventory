@@ -19,12 +19,14 @@ class Item {
      * @param {number} price - The price of the item
      * @param {number} quantity - The current stock quantity
      * @param {string} category - The category the item belongs to
+     * @param {string} [imageUrl=''] - Optional URL for the item's image
      */
-    constructor(name, price, quantity, category) {
+    constructor(name, price, quantity, category, imageUrl='') {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.category = category;
+        this.imageUrl = imageUrl
     }
 
     /**
@@ -90,7 +92,22 @@ class Item {
     setItemCategory(category) {
         this.category = category;
     }
+
+    /**
+     * Get the item's image URL
+     * @returns {string} The item's image URL
+     */
+    getItemImageUrl() {
+        return this.imageUrl;
+    }
+
+    /**
+     * Set the item's image URL
+     * @param {string} imageUrl - The new image URL
+     */
+    setItemImageUrl(imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }
 
 export default Item;
-
