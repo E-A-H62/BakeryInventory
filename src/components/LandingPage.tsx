@@ -23,9 +23,9 @@ const LandingPage: React.FC = () => {
                 <div className="container">
                     <div className="inner">
                         <header>
-                            <h1>Freshly Baked Every Day</h1>
+                            <h1>Welcome to Sunkissed Sweets!</h1>
                         </header>
-                        <p>Enjoy our handcrafted pastries.</p>
+                        <p>Add a bit more sunshine to your day with our baked goods.<br></br>Check out our inventory to see what we're offering for the week!</p>
                         <footer>
                             <a href="#main" className="primary-button">Learn More</a>
                         </footer>
@@ -36,7 +36,9 @@ const LandingPage: React.FC = () => {
             <main id="main">
                 <section className="about-section">
                     <h2>About Us</h2>
-                    <p>Here's the about section.</p>
+                    <p> What started as a late-night baking experiment turned into a full-on mission: to bring fresh, homemade treats to our fellow students.
+                        From cookies to cakes, every item is made with love, butter, and just a dash of student spirit.
+                        Whether you're craving a quick snack between classes or looking for the perfect pick-me-up after a tough exam, we've got you covered.</p>
                 </section>
 
                 <section className="schedule-section">
