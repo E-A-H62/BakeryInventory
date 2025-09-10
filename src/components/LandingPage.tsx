@@ -55,7 +55,7 @@ const LandingPage: React.FC = () => {
                 <section className="find-us">
                     <div className="find-us-content">
                         <h2>Where to Find Us?</h2>
-                        <p>Visit us at 1234 Example Ave, Pasadena, CA.</p>
+                        <p>Visit us at our table near the front gate.</p>
                         {/* Update image */}
                         <img src="/images/bakery-front.jpg" alt="Our bakery storefront" />
                     </div>
